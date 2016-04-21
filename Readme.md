@@ -15,7 +15,9 @@ $ ember install ember-outside-click
 
 ```hbs
 {{#outside-click onOutsideClick=(action 'hide')}}
-  <p>hide me if you click outside of the element</p>
+  {{#if (not hidden)}}
+    <p>hide me if you click outside of the element</p>
+  {{/if}}
 {{/outside-click}}
 ```
 
