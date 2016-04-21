@@ -1,7 +1,7 @@
 {
   "name": "ember-outside-click",
   "version": "1.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Outside click component for Ember",
   "directories": {
     "doc": "doc",
     "test": "tests"
