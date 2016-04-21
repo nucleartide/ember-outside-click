@@ -3,6 +3,8 @@
 
 Click outside component for Ember. Clean and simple.
 
+[See the demo][1].
+
 ## Install
 
 ```bash
@@ -26,4 +28,6 @@ $ ember install nucleartide/ember-click-outside
 
 > GitHub [@nucleartide](https://github.com/nucleartide) &nbsp;&middot;&nbsp;
 > Twitter [@nucleartide](https://twitter.com/nucleartide)
+
+[1]: http://nucleartide.github.io/ember-click-outside
 

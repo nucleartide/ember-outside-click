@@ -49,6 +49,7 @@
     "ember-prop-types": "1.1.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://nucleartide.github.io/ember-click-outside"
   }
 }
