@@ -9,11 +9,11 @@ export default Ember.Component.extend(PropTypeMixin, {
   layout,
 
   propTypes: {
-    onClickOutside: PropTypes.func
+    onOutsideClick: PropTypes.func
   },
 
   getDefaultProps() {
-    return { onClickOutside: K }
+    return { onOutsideClick: K }
   },
 
   init() {
@@ -33,7 +33,7 @@ export default Ember.Component.extend(PropTypeMixin, {
 
   handle(e) {
     const el = this.$()[0];
-    if (!el.contains(e.target)) this.get('onClickOutside')(e)
+    if (!el.contains(e.target)) this.get('onOutsideClick')(e)
   }
 })
 

@@ -1,22 +1,22 @@
 
-# Ember Click Outside
+# Ember Outside Click
 
-Click outside component for Ember. Clean and simple.
+Outside click component for Ember. Clean and simple.
 
 [See the demo][1].
 
 ## Install
 
 ```bash
-$ ember install nucleartide/ember-click-outside
+$ ember install ember-outside-click
 ```
 
 ## Use
 
 ```hbs
-{{#click-outside onClickOutside=(action 'hide')}}
+{{#outside-click onOutsideClick=(action 'hide')}}
   <p>hide me if you click outside of the element</p>
-{{/click-outside}}
+{{/outside-click}}
 ```
 
 ## Badges
@@ -29,5 +29,5 @@ $ ember install nucleartide/ember-click-outside
 > GitHub [@nucleartide](https://github.com/nucleartide) &nbsp;&middot;&nbsp;
 > Twitter [@nucleartide](https://twitter.com/nucleartide)
 
-[1]: http://nucleartide.github.io/ember-click-outside
+[1]: http://nucleartide.github.io/ember-outside-click
 

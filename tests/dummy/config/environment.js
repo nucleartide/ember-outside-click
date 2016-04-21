@@ -29,7 +29,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.baseURL = '/ember-click-outside/';
+    ENV.baseURL = '/ember-outside-click/';
   }
 
   return ENV

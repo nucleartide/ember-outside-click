@@ -3,6 +3,6 @@
 'use strict'
 
 module.exports = {
-  name: 'ember-click-outside'
+  name: 'ember-outside-click'
 }
 

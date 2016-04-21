@@ -1,5 +1,5 @@
 {
-  "name": "ember-click-outside",
+  "name": "ember-outside-click",
   "version": "1.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
@@ -42,8 +42,8 @@
   },
   "keywords": [
     "ember-addon",
-    "ember-click-outside",
-    "click-outside",
+    "ember-outside-click",
+    "outside-click",
     "click",
     "outside"
   ],
@@ -54,6 +54,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "demoURL": "http://nucleartide.github.io/ember-click-outside"
+    "demoURL": "http://nucleartide.github.io/ember-outside-click"
   }
 }

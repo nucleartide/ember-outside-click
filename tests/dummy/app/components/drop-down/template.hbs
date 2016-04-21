@@ -1,5 +1,5 @@
 
-{{#click-outside onClickOutside=(action 'hide')}}
+{{#outside-click onOutsideClick=(action 'hide')}}
   <a href="#" onclick={{action 'toggle'}}>Dropdown</a>
 
   {{#if open}}
@@ -11,5 +11,5 @@
       <li>Solaire of Astora</li>
     </ul>
   {{/if}}
-{{/click-outside}}
+{{/outside-click}}
 
