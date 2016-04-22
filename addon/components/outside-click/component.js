@@ -24,14 +24,14 @@ export default Ember.Component.extend(PropTypeMixin, {
 
   didInsertElement() {
     this._super(...arguments)
-    $(document).mousedown(this.handleDown)
-    $(document).mouseup(this.handleUp)
+    document.addEventListener('mousedown', this.handleDown, true)
+    document.addEventListener('mouseup', this.handleUp, true)
   },
 
   willDestroyElement() {
     this._super(...arguments)
-    $(document).off('mousedown', this.handleDown)
-    $(document).off('mouseup', this.handleUp)
+    document.removeEventListener('mousedown', this.handleDown, true)
+    document.removeEventListener('mouseup', this.handleUp, true)
   },
 
   isOutside: false,
