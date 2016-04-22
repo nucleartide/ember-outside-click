@@ -3,7 +3,7 @@ import Ember from 'ember'
 import layout from './template'
 import PropTypeMixin, { PropTypes } from 'ember-prop-types'
 
-const { K, $ } = Ember
+const { K } = Ember
 
 export default Ember.Component.extend(PropTypeMixin, {
   layout,
