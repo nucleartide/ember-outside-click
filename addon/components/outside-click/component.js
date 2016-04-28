@@ -37,18 +37,14 @@ export default Ember.Component.extend(PropTypeMixin, {
   isOutside: false,
 
   handleDown(e) {
-    if (this.isDestroyed || this.isDestroying) {
-      return;
-    }
     const el = this.$()[0];
+    if (this.isDestroyed || this.isDestroying) return;
     if (!el.contains(e.target)) this.set('isOutside', true)
   },
 
   handleUp(e) {
-    if (this.isDestroyed || this.isDestroying) {
-      return;
-    }
     if (this.get('isOutside')) this.get('onOutsideClick')(e)
+    if (this.isDestroyed || this.isDestroying) return;
     this.set('isOutside', false)
   }
 })
