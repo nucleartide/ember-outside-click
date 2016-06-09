@@ -1,6 +1,6 @@
 {
   "name": "ember-outside-click",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Outside click component for Ember",
   "directories": {
     "doc": "doc",
