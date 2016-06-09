@@ -13,6 +13,8 @@ $ ember install ember-outside-click
 
 ## Use
 
+#### Block form
+
 ```hbs
 {{#outside-click onOutsideClick=(action 'hide')}}
   <a href="#" onclick={{action 'toggle'}}>Dropdown</a>
@@ -27,13 +29,40 @@ $ ember install ember-outside-click
 {{/outside-click}}
 ```
 
+#### Subclass
+
+```js
+import OutsideClick from 'ember-outside-click/components/outside-click/component'
+
+const Dropdown = OutsideClick.extend({
+  open: false,
+
+  init() {
+    this._super(...arguments)
+    this.onOutsideClick = this.onOutsideClick.bind(this)
+  },
+
+  onOutsideClick() {
+    this.set('open', false)
+  },
+
+  actions: {
+    toggle() {
+      this.toggleProperty('open')
+    }
+  }
+})
+
+export default Dropdown
+```
+
 ## Testing
 
 As explained by <strong>[@runspired][2]</strong>, jQuery events are somewhat
-confusing. So ember-outside-click uses native DOM methods instead.
+inconsistent. So ember-outside-click uses native DOM methods instead.
 
-If you find yourself having trouble with jQuery's `trigger`, you should make a
-`triggerMouseEvent` test helper and call that instead:
+If you find yourself having trouble with jQuery's `trigger`, you should make
+and call a `triggerMouseEvent` test helper.
 
 ```js
 // tests/helpers/trigger-mouse-event.js
@@ -45,9 +74,10 @@ export default function triggerMouseEvent(node, eventType) {
 
 // tests/integration/components/drop-down/component-test.js
 test('click outside', function(assert) {
-  triggerMouseEvent(this.$()[0], 'mousedown')
-  triggerMouseEvent(this.$()[0], 'mouseup')
-  return wait().then(_ => assert.ok(clickedOutside))
+  const el = this.$()[0]
+  triggerMouseEvent(el, 'mousedown')
+  triggerMouseEvent(el, 'mouseup')
+  assert.ok(clickedOutside)
 })
 ```
 

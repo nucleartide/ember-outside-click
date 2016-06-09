@@ -1,20 +1,12 @@
 
 import Ember from 'ember'
 import layout from './template'
-import PropTypeMixin, { PropTypes } from 'ember-prop-types'
 
 const { K } = Ember
 
-export default Ember.Component.extend(PropTypeMixin, {
+export default Ember.Component.extend({
   layout,
-
-  propTypes: {
-    onOutsideClick: PropTypes.func
-  },
-
-  getDefaultProps() {
-    return { onOutsideClick: K }
-  },
+  onOutsideClick: K,
 
   init() {
     this._super(...arguments)
@@ -37,13 +29,13 @@ export default Ember.Component.extend(PropTypeMixin, {
   isOutside: false,
 
   handleDown(e) {
-    if (this.isDestroyed || this.isDestroying) return;
+    if (this.isDestroyed || this.isDestroying) return
     if (!this.element.contains(e.target)) this.set('isOutside', true)
   },
 
   handleUp(e) {
     if (this.get('isOutside')) this.get('onOutsideClick')(e)
-    if (this.isDestroyed || this.isDestroying) return;
+    if (this.isDestroyed || this.isDestroying) return
     this.set('isOutside', false)
   }
 })

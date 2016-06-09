@@ -1,15 +1,13 @@
 
-{{#outside-click onOutsideClick=(action 'hide')}}
-  <a href="#" onclick={{action 'toggle'}}>Dropdown</a>
+<a href="#" onclick={{action 'toggle'}}>Dropdown</a>
 
-  {{#if open}}
-    <ul>
-      <li><strong>Who do you want to be the next president?</strong></li>
-      <li>Trump</li>
-      <li>Hillary</li>
-      <li>Bernie</li>
-      <li>Solaire of Astora</li>
-    </ul>
-  {{/if}}
-{{/outside-click}}
+{{#if open}}
+  <ul>
+    <li><strong>Who do you want to be the next president?</strong></li>
+    <li>Trump</li>
+    <li>Hillary</li>
+    <li>Bernie</li>
+    <li>Solaire of Astora</li>
+  </ul>
+{{/if}}
 

@@ -1,20 +1,25 @@
 
-import Ember from 'ember'
-import layout from './template'
+import OutsideClick from 'ember-outside-click/components/outside-click/component'
 
-export default Ember.Component.extend({
-  layout,
+export default OutsideClick.extend({
   open: false,
   classNames: ['Dropdown'],
 
-  actions: {
-    toggle() {
-      this.toggleProperty('open')
-    },
+  init() {
+    this._super(...arguments)
+    this.onOutsideClick = this.onOutsideClick.bind(this)
+  },
 
-    hide() {
-      this.set('open', false)
-    }
+  onOutsideClick() {
+    this.set('open', false)
+  },
+
+  actions: {
+    toggle() { return this.toggle(...arguments) }
+  },
+
+  toggle() {
+    this.toggleProperty('open')
   }
 })
 
