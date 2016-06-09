@@ -31,32 +31,9 @@ $ ember install ember-outside-click
 
 #### Subclass
 
-```js
-import OutsideClick from 'ember-outside-click/components/outside-click/component'
+[See the demo code][3].
 
-const Dropdown = OutsideClick.extend({
-  open: false,
-
-  init() {
-    this._super(...arguments)
-    this.onOutsideClick = this.onOutsideClick.bind(this)
-  },
-
-  onOutsideClick() {
-    this.set('open', false)
-  },
-
-  actions: {
-    toggle() {
-      this.toggleProperty('open')
-    }
-  }
-})
-
-export default Dropdown
-```
-
-## Testing
+## Test
 
 As explained by <strong>[@runspired][2]</strong>, jQuery events are somewhat
 inconsistent. So ember-outside-click uses native DOM methods instead.
@@ -81,16 +58,15 @@ test('click outside', function(assert) {
 })
 ```
 
-## Badges
-
-![](https://img.shields.io/badge/license-MIT-blue.svg)
-![](https://img.shields.io/badge/status-stable-green.svg)
-
 ---
+
+![](https://img.shields.io/badge/license-MIT-blue.svg) 
+![](https://img.shields.io/badge/status-stable-green.svg)
 
 > GitHub [@nucleartide](https://github.com/nucleartide) &nbsp;&middot;&nbsp;
 > Twitter [@nucleartide](https://twitter.com/nucleartide)
 
 [1]: http://nucleartide.github.io/ember-outside-click
 [2]: http://blog.runspired.com/2016/01/27/the-real-reason-to-avoid-jquery/#mistake4usingoratleastnotunderstandingjqueryeventing
+[3]: https://github.com/nucleartide/ember-outside-click/tree/master/tests/dummy/app/components/drop-down
 
