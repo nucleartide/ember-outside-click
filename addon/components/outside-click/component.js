@@ -2,10 +2,12 @@
 import Ember from 'ember'
 import layout from './template'
 
-const { K } = Ember
+const {
+  K,
+  Component
+} = Ember
 
-export default Ember.Component.extend({
-  layout,
+export default Component.extend({
   onOutsideClick: K,
 
   init() {
@@ -13,6 +15,9 @@ export default Ember.Component.extend({
     this.handleDown = this.handleDown.bind(this)
     this.handleUp = this.handleUp.bind(this)
   },
+
+  layout,
+  classNames: ['outside-click'],
 
   didInsertElement() {
     this._super(...arguments)
