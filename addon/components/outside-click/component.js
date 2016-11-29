@@ -18,6 +18,7 @@ export default Component.extend({
 
   layout,
   classNames: ['outside-click'],
+  excludedClasses: [],
 
   didInsertElement() {
     this._super(...arguments)
@@ -35,7 +36,14 @@ export default Component.extend({
 
   handleDown(e) {
     if (this.isDestroyed || this.isDestroying) return
-    if (!this.element.contains(e.target)) this.set('isOutside', true)
+
+    let isExcluded = this.get('excludedClasses').some((excludedClass) => {
+      return ` ${e.target.className} `.indexOf(` ${excludedClass} `) > -1
+    });
+
+    if (!this.element.contains(e.target) && !isExcluded) {
+      this.set('isOutside', true)
+    }
   },
 
   handleUp(e) {
