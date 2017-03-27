@@ -2,13 +2,8 @@
 import Ember from 'ember'
 import layout from './template'
 
-const {
-  K,
-  Component
-} = Ember
-
-export default Component.extend({
-  onOutsideClick: K,
+export default Ember.Component.extend({
+  onOutsideClick() {},
 
   init() {
     this._super(...arguments)
@@ -52,4 +47,3 @@ export default Component.extend({
     this.set('isOutside', false)
   }
 })
-
